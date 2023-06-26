@@ -2,14 +2,10 @@ import java.util.*;
 import sun.tools.jar.resources.jar_pt_BR; 
 import java.lang.*;
 
-
 class Deck { 
-
-//The global variables 
     static Scanner input = new Scanner(System.in);
     public static Card[] deck = new Card[52];
     public static String cardTakenOut; 
-
     
     public Deck() {
 
@@ -36,17 +32,15 @@ class Deck {
     
     //Shuffle cards using the Fisher-Yates algorithm 
     public void shuffleCards() {
-
         Random random = new Random();
 
         for (int i = deck.length - 1; i > 0; i--) {
             int j = random.nextInt(i); 
  
-            Card temp = deck[j]; //Mix up the cards here 
+            Card temp = deck[j];
             deck[j] = deck[i];
             deck[i] = temp; 
         }
-
         dashedLines(); 
 
 
